@@ -72,9 +72,8 @@ class PrivacyPolicyPage extends Component {
 						defaultContent={
 							<BulletPointList
 								bullets={[
-									"The inputs needed for 3 Skye products and services (eg your client’s details).",
+									"The inputs needed for 3Skye products and services (eg your client’s details).",
 									"Information to manage your requests and our relationship.",
-									"To keep tax records.",
 									"To keep tax records.",
 									"To assist with your support request.",
 								]}
