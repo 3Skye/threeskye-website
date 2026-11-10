@@ -16,6 +16,7 @@ import Homepage from "./pages/Homepage";
 import IntegrationsPage from "./pages/IntegrationsPage";
 import FundManagementPage from "./pages/FundManagementPage";
 import PortalManagementPage from "./pages/PortalManagementPage";
+import BotPage from "./pages/BotPage";
 
 function App() {
 	// Paths for navigation
@@ -41,6 +42,12 @@ function App() {
 
 	const combinedPaths = [ ...paths, ...other ];
 
+	// Footer-only links (kept out of the main navigation)
+	const footerPaths = [
+		...paths,
+		{ name: "Our Web Crawler", path: "/bot", exact: true },
+	];
+
 	return (
 		<div className="master-container">
 			<BrowserRouter>
@@ -64,10 +71,11 @@ function App() {
 						<Route path="/about-us" exact render={() => <AboutUsPage products={products} />} />
 						<Route path="/get-in-touch" exact render={() => <GetInTouchPage products={products} />} />
 						<Route path="/privacy-policy" exact render={() => <PrivacyPolicyPage products={products} />} />
+						<Route path="/bot" exact render={() => <BotPage />} />
 						<Route render={ErrorPage}/>
 					</Switch>
 				</div>
-				<Footer paths={paths} products={products} other={other} />
+				<Footer paths={footerPaths}products={products} other={other} />
 			</BrowserRouter>
 		</div>
 	);
